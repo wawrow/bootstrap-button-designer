@@ -1,0 +1,15 @@
+{
+  "name": "bootstrap-button-designer",
+  "description": "",
+  "main": "dist/bootstrap-button-designer.min.js",
+  "authors": [
+    "Wawrzyniec (Larry) Wawro <wawrzyniec@wawro.eu>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "dependencies": {
+    "jQuery": ">= 1.9.0",
+    "bootstrap": "= 3.3.7"
+  }
+}

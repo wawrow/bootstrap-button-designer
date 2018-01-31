@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet prefetch" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel='stylesheet prefetch' href='//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' />
+    <link rel='stylesheet prefetch' href='//cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css' />
+    <script src="bower_components/jQuery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+      <link rel="stylesheet" href="dist/bootstrap-button-designer.css" media="screen">
+    <!--<script src="dist/all.min.js"></script>-->
+    <script src="src/font-arrays.js"></script>
+    <script src="src/bootstrap-button-designer.js"></script>
+
+  </head>
+  <body>
+  <div class="container">
+  <button type="button" class="btn btn-default button-designer"><i class="fa fa-plus" ></i> Some Text Button 1</button>
+  <button type="button" class="btn btn-default button-designer"><i class="fa fa-plus" ></i> Some Text Button 2</button>
+  <button type="button" class="btn btn-default button-designer"><i class="fa fa-plus" ></i> Some Text Button 3</button>
+  <button type="button" class="btn btn-default button-designer"><i class="fa fa-plus" ></i> Some Text Button 4</button>
+  </div>
+
+  <script id="buttondesignerdiv" type="text/html">
+    <div class="row">
+      <div class="col-sm-3 button-styles"></div>
+      <div class="col-sm-6">
+        <div class="row">
+          <div class="row">
+            <div class="col-sm-4"><label>Text</label></div>
+            <div class="col-sm-8"><input type="text" class="form-control" data-button-property="button-text" value="" placeholder="Text on the Button" /></div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4"><label>Icon</label></div>
+            <div class="col-sm-8">
+                <div class="input-group dropdown">
+                    <input type="text" autocomplete="off" placeholder="Choose Icon" class="form-control" data-button-property="button-icon">
+                    <ul class="dropdown-menu icon-list"></ul>
+                    <span class="input-group-addon dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></span>
+                </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4">
+              <label>Alignement:</label>
+            </div>
+            <div class="col-sm-4">
+                <label class="switch"><input type="checkbox" data-button-property="button-image-alignement"><span class="slider round"></span></label>
+            </div>
+          </div>
+            <div class="button-classes"></div>
+        </div>
+      </div>
+      <div class="col-sm-3 button-sizes"></div>
+    </div>
+  </script>
+
+  <script>
+        $(function () {
+            var a = $('.button-designer').button_desinger();
+        })
+    </script>
+
+  </body>
+</html>
