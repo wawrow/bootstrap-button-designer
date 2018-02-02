@@ -68,6 +68,7 @@ input:checked + .slider:before {
 
 .popover{
   max-width: 500px;
+  min-width: 500px;
 }
 .icon-list{
   overflow-y: scroll;

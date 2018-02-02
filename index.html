@@ -11,14 +11,92 @@
 
     <link rel="stylesheet" href="dist/bootstrap-button-designer.css" media="screen">
     <script src="dist/bootstrap-button-designer.all.min.js"></script>
+<style>
+  .mb-1{
+    margin-bottom: 0.25rem;
+  }
+  .btn.btn-sharp {
+    border-radius:0;
+  }
+  .btn.btn-sharp {
+    border-radius:0;
+  }
 
+  .btn.btn-outline {
+    background: none;
+    padding: 12px 22px;
+  }
+  .btn.btn-round {
+    border-radius: 24px;
+  }
+  .btn.btn-shadow {
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12), 0 3px 5px -1px rgba(0, 0, 0, .2)
+  }
+
+</style>
   </head>
   <body>
   <div class="container">
-  <button type="button" class="btn btn-default button-designer"><i class="fa fa-plus" ></i> Some Text Button 1</button>
-  <button type="button" class="btn btn-default button-designer"><i class="fa fa-plus" ></i> Some Text Button 2</button>
-  <button type="button" class="btn btn-default button-designer"><i class="fa fa-plus" ></i> Some Text Button 3</button>
-  <button type="button" class="btn btn-default button-designer"><i class="fa fa-plus" ></i> Some Text Button 4</button>
+    <div class="row">
+      <h1>Bootstrap Button Designer Demo</h1>
+      <div class="col-sm-12">
+        Required dependecies:
+<pre>
+  bootstrap.min.css@3.3.7
+  font-awesome.min.css@4.7.0 <sup>&ast;(optional, enable by default)</sup>
+  ionicons.min.css@2.0.1 <sup>&ast;(optional, enable by default)</sup>
+  jquery.slim.min.js@3.3.1 <sup>&ast;(will probably work with older)</sup>
+</pre>
+        Usage:
+<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+  <sup>... your bootstrap / jquery goes here ... </sup>
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;dist/bootstrap-button-designer.css&quot; media=&quot;screen&quot;&gt;
+  &lt;script src=&quot;dist/bootstrap-button-designer.all.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;button type=&quot;button&quot; class=&quot;btn btn-default button-designer&quot;&gt;&lt;i class=&quot;fa fa-plus&quot;&gt;&lt;/i&gt; Some Text Button 1&lt;/button&gt;
+  &lt;script&gt;
+        $(function () {
+            $(&#39;.button-designer&#39;).button_desinger().on(&#39;update.bs.button-designer&#39;, function(){
+                console.log(this.outerHTML);
+            });
+        })
+    &lt;/script&gt;
+&lt;/body&gt;</pre>
+      </div>
+
+
+    </div>
+    <div class="row">
+      Click on any button to edit
+    </div>
+    <div class="row mb-1">
+      <div class="col-sm-4">
+        <button type="button" class="btn btn-default button-designer"><i class="fa fa-plus"></i> Some Text Button 1</button>
+      </div>
+      <div class="col-sm-8"></div>
+    </div>
+    <div class="row mb-1">
+      <div class="col-sm-4">
+        <button type="button" class="btn btn-success button-designer"><i class="icon ion-happy-outline"></i> Some Text Button 2</button>
+      </div>
+      <div class="col-sm-8"></div>
+    </div>
+    <div class="row mb-1">
+      <div class="col-sm-4">
+        <button type="button" class="btn btn-info button-designer"><i class="glyphicon glyphicon-info-sign"></i> Some Text Button 3</button>
+      </div>
+      <div class="col-sm-8"></div>
+    </div>
+    <div class="row mb-1">
+      <div class="col-sm-4">
+        <button type="button" class="btn btn-warning button-designer"><i class="fa fa-warning"></i> Some Text Button 4</button>
+      </div>
+      <div class="col-sm-8"></div>
+    </div>
   </div>
 
   <script id="buttondesignerdiv" type="text/html">
@@ -57,7 +135,14 @@
 
   <script>
         $(function () {
-            var a = $('.button-designer').button_desinger();
+            var cleanup = function (button) {
+                return button
+                    .replace(/\s?(aria|data|title).+?".*?\s?"/ig, "");
+            }
+            $('.button-designer').button_desinger().on('update.bs.button-designer', function(){
+                console.log($(this).closest('.row'));
+                $(this).closest('.row').children(':last').text(cleanup(this.outerHTML));
+            });
         })
     </script>
 

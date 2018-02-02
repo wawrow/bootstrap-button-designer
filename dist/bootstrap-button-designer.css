@@ -54,7 +54,8 @@ input:checked + .slider:before {
   border-radius: 50%; }
 
 .popover {
-  max-width: 500px; }
+  max-width: 500px;
+  min-width: 500px; }
 
 .icon-list {
   overflow-y: scroll;

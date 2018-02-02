@@ -17,6 +17,7 @@
     };
 
 
+
     var init_button_designer = function(button, buttondesigner, options) {
 
         buttondesigner.find('button').click(function () {
@@ -80,25 +81,6 @@
                 }, 500);
         });
 
-        button.on("updateDesign", function () {
-            $(this).removeClass();
-            $(this).addClass('btn');
-            $(this).addClass($(this).data('button-class'));
-            $(this).addClass($(this).data('button-size'));
-            for(extra_class in options['extra_classes']){
-                if($(this).data(options['extra_classes'][extra_class]))
-                    $(this).addClass(options['extra_classes'][extra_class]);
-            }
-            $(this).empty();
-            $(this).text($(this).data('button-text'));
-            var i = document.createElement("i");
-            $(i).addClass($(this).data('button-icon'));
-            if ($(this).data('button-image-alignement'))
-                $(this).append(i);
-            else
-                $(this).prepend(i);
-        });
-
         buttondesigner.find('input[data-button-property=button-text]').val(button.text());
         button.data('button-text', button.text());
         if(button.has('i')){
@@ -132,6 +114,8 @@
             //icons : ['fa', 'ion', 'glyphicons'],
         }, options );
 
+
+
         var designer_template = $($('#buttondesignerdiv').html());
 
         parse_templates(designer_template, '.button-styles', settings['styles'], BUTTON_STYLE_TEMPLATE);
@@ -141,6 +125,25 @@
 
         return this.each(function() {
             var self = $(this);
+            self.on("updateDesign", function () {
+                $(this).removeClass();
+                $(this).addClass('btn');
+                $(this).addClass($(this).data('button-class'));
+                $(this).addClass($(this).data('button-size'));
+                for(extra_class in settings['extra_classes']){
+                    if($(this).data(settings['extra_classes'][extra_class]))
+                        $(this).addClass(settings['extra_classes'][extra_class]);
+                }
+                $(this).empty();
+                $(this).text($(this).data('button-text'));
+                var i = document.createElement("i");
+                $(i).addClass($(this).data('button-icon'));
+                if ($(this).data('button-image-alignement'))
+                    $(this).append(i);
+                else
+                    $(this).prepend(i);
+                $(this).trigger('update.bs.button-designer');
+            });
 
             self.popover({
                 html : true,
