@@ -1,15 +1,28 @@
 {
   "name": "bootstrap-button-designer",
-  "description": "",
-  "main": "dist/bootstrap-button-designer.min.js",
+  "description": "Simple Button Designer for Bootstrap. Created for the purpose of CMS UI.",
+  "main": "dist/bootstrap-button-designer.all.min.js",
   "authors": [
     "Wawrzyniec (Larry) Wawro <wawrzyniec@wawro.eu>"
   ],
   "license": "MIT",
-  "homepage": "",
-  "private": true,
+  "homepage": "https://github.com/wawrow/bootstrap-button-designer",
   "dependencies": {
     "jQuery": ">= 1.9.0",
     "bootstrap": "= 3.3.7"
-  }
+  },
+  "keywords": [
+    "bootstrap",
+    "buttons",
+    "cms",
+    "designer",
+    "ui"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
 }
