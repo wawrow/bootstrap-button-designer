@@ -67,7 +67,7 @@
             if(!$(this).closest('.dropdown').hasClass('open'))
                 $(this).closest('.dropdown').find('[data-toggle=dropdown]').dropdown('toggle');
             filter_timout = setTimeout(function(){
-                var filteredData = ICONS_LIST.filter(function(item) {
+                var filteredData = ICON_LIST(options['icons']).filter(function(item) {
                     return item.indexOf(search) > -1;
                 });
                 console.log(filteredData.length);
@@ -110,8 +110,8 @@
                 'Round' : 'btn-round',
                 'Shadow' : 'btn-shadow',
                 'Block' : 'btn-block'
-            }
-            //icons : ['fa', 'ion', 'glyphicons'],
+            },
+            icons : ['fa', 'ion', 'glyphicons'],
         }, options );
 
 
@@ -121,7 +121,7 @@
         parse_templates(designer_template, '.button-styles', settings['styles'], BUTTON_STYLE_TEMPLATE);
         parse_templates(designer_template, '.button-sizes', settings['sizes'], BUTTON_SIZE_TEMPLATE);
         parse_templates(designer_template, '.button-classes', settings['extra_classes'], EXTRA_CLASS_TEMPLATE);
-        parse_templates(designer_template, '.icon-list', ICONS_LIST, ICON_PICKER_TEMPLATE);
+        parse_templates(designer_template, '.icon-list', ICON_LIST(settings['icons']), ICON_PICKER_TEMPLATE);
 
         return this.each(function() {
             var self = $(this);

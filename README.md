@@ -7,8 +7,8 @@ A simple js Button Designer with class, icon and size picker.
 Required dependecies:
 
 - `bootstrap.min.css@3.3.7`
-- `font-awesome.min.css@4.7.0` *(optional, enable by default)
-- `ionicons.min.css@2.0.1` *(optional, enable by default)
+- `font-awesome.min.css@4.7.0` *(optional, enabled by default)
+- `ionicons.min.css@2.0.1` *(optional, enabled by default)
 - `jquery.slim.min.js@3.3.1` *(will probably work with older)
 
 Add to Head:
@@ -50,7 +50,9 @@ $('.button-designer').button_desinger({styles : {
    extra_classes : {
        'Round' : 'btn-round',
        'Shadow' : 'btn-shadow',
-       'Block' : 'btn-block'
+       'Block' : 'btn-block',
+   },
+   icons : ['fa', 'ion', 'glyphicons']
 })`
 ```
 
