@@ -14,7 +14,7 @@ gulp.task('styles', function() {
 // Scripts task
 gulp.task('scripts', function() {
   gulp.src('src/**/*.js')
-      .pipe(concat('all.js'))
+      .pipe(concat('bootstrap-button-designer.all.js'))
       .pipe(uglify())
       .pipe(rename({
     suffix: '.min'
