@@ -1,6 +1,7 @@
 ## Bootstrap Button Designer
 
 A simple js Button Designer with class, icon and size picker.
+![Sample Image](https://wawrow.github.io/bootstrap-button-designer/docs/sample.png)
 
 ## Installation
 
